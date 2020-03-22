@@ -1,7 +1,6 @@
 const mesa = require('../../models/mesa')
 
 module.exports = {
-
     async cadastro(req, res){
         mesa.create({ 
             numero: req.body.numero, 

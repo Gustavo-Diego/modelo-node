@@ -7,9 +7,6 @@ const rotas = require('./routes/routes')
 const passportUsuario = require('passport')
 require('./config/passportUsuario')(passportUsuario)
 
-const passportEmpresa = require('passport')
-require('./config/passportEmpresa')(passportEmpresa)
-
 const app = express()
 
 app.use(cors())
@@ -23,10 +20,6 @@ app.use(session({
 //passport de login de usuario
 app.use(passportUsuario.initialize())
 app.use(passportUsuario.session())
-
-//passport de login de empresa
-app.use(passportEmpresa.initialize())
-app.use(passportEmpresa.session())
 
 //body-parser
 app.use(bodyParser.urlencoded({extended: false}))
