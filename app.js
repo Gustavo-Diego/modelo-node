@@ -44,21 +44,6 @@ app.post('/loginUsuario',(req, res) =>{
     )(req, res)
 })
 
-// rota de login de empresa
-app.post('/loginEmpresa',(req, res) =>{
-    passportEmpresa.authenticate('local',
-    function(err, empresa){
-        if(!empresa){
-            res.json(err)
-            console.log(err)
-        }else{
-            res.json(empresa)
-            console.log(empresa)
-        }
-    }
-    )(req, res)
-})
-
 app.listen(porta, ()=>{
     console.log(`o servidor está rodando na por http://localhost:${porta}`)
 })
